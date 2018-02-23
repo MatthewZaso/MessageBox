@@ -1,0 +1,39 @@
+{
+  "name": "message-box",
+  "version": "1.0.0",
+  "description": "A simple app to try out nedb with express",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm run build",
+    "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --https --content-base src/ --inline",
+    "build:prod": "webpack -p && cp src/index.html dist/index.html && cp -r src/images dist/images && node app.js",
+    "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=; NPM_CONFIG_PRODUCTION=false NODE_ENV=development npm install --only=dev --dev",
+    "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production; webpack -p && cp src/index.html dist/index.html && cp -r src/images dist/images "
+  },
+  "author": "Matthew Zaso (zaso.matthew@gmail.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-lodash": "^3.2.11",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "nedb": "^1.8.0",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2",
+    "workbox-webpack-plugin": "^2.1.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "core-js": "^2.5.1",
+    "express": "^4.15.4",
+    "lodash": "^4.17.4"
+  }
+}

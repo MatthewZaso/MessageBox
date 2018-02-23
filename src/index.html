@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<link href="/app/css/main.css" rel="stylesheet">
+</head>
+<body>
+  <div class="main message-box">
+		<div class="message-box__send">
+			<label>Recipient:</label>
+			<input class="message-box__send__recipient" type="text" placeholder="Recipient">
+			<label>Message:</label>
+			<textarea class="message-box__send__message" placeholder="Your message here:"></textarea>
+			<button class="message-box__send__send-btn">Send it.</button>
+		</div>
+		<div class="message-box__messages">
+			<h1>Messages:</h1>
+			<div class="message-box__messages__container"></div>
+			<button class="message-box__send__refresh-btn">Refresh</button>
+		</div>
+	</div>
+	<script src="/app/bundle.js"></script>
+	<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/sw.js');
+		}
+	</script>
+</body>
+</html>

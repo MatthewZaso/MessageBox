@@ -1,0 +1,10 @@
+.env
+
+# Package Managers
+node_modules
+./vendor
+
+# Generated front-end files
+gulp/stats.json
+public/_dist
+resources/css/sass-extensions/variables/compiled
